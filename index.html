@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <h1>I LOVE YOU!</h1>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="flight.html">Flight</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="envelope" id="envelope">
+            <div class="flap" id="flap"></div>
+            <div class="card" id="card">Happy Valentine's Babi</div>
+            <div class="left-triangle"></div>
+            <img class="gif" src="img/pusheenlove.gif" alt="Envelope GIF">
+        </div>
+    </div>
+    <script>
+const envelope = document.getElementById("envelope");
+const card = document.getElementById("card");
+const flap = document.getElementById("flap");
+
+let isDragging = false;
+let offsetX = 0, offsetY = 0;
+let currentX = 0, currentY = 0;
+
+// Envelope click - flap rotates immediately, and card appears after a delay
+envelope.addEventListener("click", () => {
+    // Open the flap by rotating it upwards
+    flap.style.transform = "rotateX(0deg)"; 
+    
+    // After a short delay (e.g., 0.5s), make the card visible and animate it into place
+    setTimeout(() => {
+        card.style.transform = `translate(-50%, -50%) scale(1)`;  // Moves card to visible position
+        card.style.opacity = "1";  // Makes card visible
+    }, 500);  // Delay of 500ms (0.5 seconds) before the card appears
+});
+
+// Pointer down to initiate drag
+card.addEventListener("pointerdown", (event) => {
+    isDragging = true;
+    offsetX = event.clientX - currentX;
+    offsetY = event.clientY - currentY;
+    card.style.cursor = "grabbing";
+    event.preventDefault(); // Prevent any default actions (like text selection)
+});
+
+// Pointer move to drag the card
+document.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+
+    // Calculate the current mouse position minus the offsets
+    currentX = event.clientX - offsetX;
+    currentY = event.clientY - offsetY;
+
+    // Move the card as the mouse moves
+    card.style.transform = `translate(${currentX}px, ${currentY}px) scale(1)`;
+});
+
+// Pointer up to stop dragging
+document.addEventListener("pointerup", () => {
+    isDragging = false;
+    card.style.cursor = "grab";
+});
+
+    </script>
+</body>
+</html>
