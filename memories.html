@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Navbar Section -->
     <h1>My Favourite Screenshots and Videos</h1>
     <nav class="navbar">
         <ul class="nav-links">
@@ -35,9 +34,7 @@
 
     </div>
 
-    <!-- Gallery Section -->
     <div class="gallery">
-        <!-- Image Example -->
         <div class="gallery-item">
             <img src="img/Screenshot 2024-11-22 002641.png" alt="Funny Moment 1">
             <div class="overlay">Naked me</div>
@@ -47,41 +44,39 @@
             <div class="overlay">Our Trip</div>
         </div>
 
-        <!-- Video Example -->
         <div class="gallery-item">
             <video controls>
                 <source src="img/duhburger.mp4" type="video/mp4">
-                <div class="overlay">Epic Fail 😆</div>
+                <div class="overlay"></div>
             </video>
         </div>
         <div class="gallery-item">
             <video controls>
                 <source src="img/fart.mp4" type="video/mp4">
-                <div class="overlay">Epic Fail 😆</div>
+                <div class="overlay"></div>
             </video>
         </div>
         <div class="gallery-item">
             <video controls>
                 <source src="img/gracedance.mp4" type="video/mp4">
-                <p class="caption">Epic Fail 😆</p>
+                <p class="caption"></p>
             </video>
         </div>
         <div class="gallery-item">
             <video controls>
                 <source src="img/mamabehindu.mp4" type="video/mp4">
-                <p class="caption">Epic Fail 😆</p>
+                <p class="caption"></p>
             </video>
         </div>
         <div class="gallery-item">
             <video controls>
                 <source src="img/HELLO.MP4" type="video/mp4">
-                <p class="caption">Epic Fail 😆</p>
+                <p class="caption"></p>
             </video>
         </div>
         <div class="gallery-item">
             <video controls>
                 <source src="img/gracekill.mp4" type="video/mp4">
-                Your browser does not support the video tag.
             </video>
         </div>
     </div>
@@ -94,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll(".floating");
 
     images.forEach(img => {
-        // Assign random positions
         img.style.top = Math.random() * 90 + "vh";
         img.style.left = Math.random() * 90 + "vw";
     });
