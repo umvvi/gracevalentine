@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <h1>My Favourite Screenshots and Videos</h1>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="flight.html">Flight</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="floating-images" id="floating-container">
+        <img src="/img/pusheenplant.gif" class="floating">
+        <img src="img/pusheenlove.gif" class="floating">
+        <img src="img/pusheenheart.gif" class="floating">
+        <img src="img/heart-love.gif" class="floating">
+        <img src="/img/pusheenplant.gif" class="floating">
+        <img src="img/pusheenlove.gif" class="floating">
+        <img src="img/pusheenheart.gif" class="floating">
+        <img src="img/heart-love.gif" class="floating">
+        <img src="img/pusheenjiggle.gif" class="floating">
+        <img src="img/pusheenjiggle.gif" class="floating">
+        <img src="img/hellokittylove.gif" class="floating">
+        <img src="img/hellokittylove.gif" class="floating">
+
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery">
+        <!-- Image Example -->
+        <div class="gallery-item">
+            <img src="img/Screenshot 2024-11-22 002641.png" alt="Funny Moment 1">
+            <div class="overlay">Naked me</div>
+        </div>
+        <div class="gallery-item">
+            <img src="img/Screenshot 2024-11-19 214009.png" alt="Funny Moment 2">
+            <div class="overlay">Our Trip</div>
+        </div>
+
+        <!-- Video Example -->
+        <div class="gallery-item">
+            <video controls>
+                <source src="img/duhburger.mp4" type="video/mp4">
+                <div class="overlay">Epic Fail 😆</div>
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video controls>
+                <source src="img/fart.mp4" type="video/mp4">
+                <div class="overlay">Epic Fail 😆</div>
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video controls>
+                <source src="img/gracedance.mp4" type="video/mp4">
+                <p class="caption">Epic Fail 😆</p>
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video controls>
+                <source src="img/mamabehindu.mp4" type="video/mp4">
+                <p class="caption">Epic Fail 😆</p>
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video controls>
+                <source src="img/HELLO.MP4" type="video/mp4">
+                <p class="caption">Epic Fail 😆</p>
+            </video>
+        </div>
+        <div class="gallery-item">
+            <video controls>
+                <source src="img/gracekill.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    
+
+    <script>
+        
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".floating");
+
+    images.forEach(img => {
+        // Assign random positions
+        img.style.top = Math.random() * 90 + "vh";
+        img.style.left = Math.random() * 90 + "vw";
+    });
+});
+
+    </script>
+</body>
+</html>

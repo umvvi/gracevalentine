@@ -1,0 +1,347 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe6e6;
+    margin: 0;
+    user-select: none; /* Prevent text selection */
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 100;
+    background-color: transparent; /* Make the navbar background transparent */
+    border-bottom: none; /* Remove any borders */
+}
+
+/* Navbar Links Container */
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+}
+
+/* Navbar Link Items */
+.nav-links li {
+    margin: 0 30px; /* More space between the links */
+}
+
+/* Navbar Links Styling */
+.nav-links a {
+    color: #ff4d88; /* Soft red/pink color */
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 20px; /* Rounded corners for a cuter effect */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect on links */
+.nav-links a:hover {
+    background-color: #ff66b2; /* A slightly darker pink on hover */
+    color: #fff; /* White text color when hovered */
+    transform: scale(1.1); /* Slightly enlarge the link on hover */
+}
+
+/* Adding space at the top for the fixed navbar */
+body {
+    padding-top: 10px; /* Space for the fixed navbar */
+}
+
+h1 {
+    font-family:'Cyrl', 'Grek', 'Latn', sans-serif;
+    color: #ff4081; /* Valentine pink */
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px; /* Space between h1 and envelope */
+    margin-top: 0px; /* Optional: Reduce top margin for better centering */
+}
+
+h2 {
+    color: #ff4081;
+}
+
+
+h3 {
+    color: #ff4081;
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ff80ab, #ff4081);
+    clip-path: polygon(50% 0%, 0% 35%, 50% 100%, 100% 35%);
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Envelope Up and Down Animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0); /* Start at the normal position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move the envelope 10px up */
+    }
+    100% {
+        transform: translateY(0); /* Return to the normal position */
+    }
+}
+
+/* Envelope */
+.envelope {
+    width: 250px;
+    height: 180px;
+    background: #ff4081;
+    position: relative;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slight shadow for 3D effect */
+    animation: bounce 2s ease-in-out infinite; /* Apply the bounce animation */
+    transition: transform 0.3s ease; /* Smooth transformation */
+}
+
+
+.flap {
+    position: absolute;
+    top: -89px; /* Adjust flap's vertical position (move up) */
+    left: -50; /* Align it to the left of the envelope */
+    width: 0;
+    height: 0;
+    border-left: 124px solid transparent; /* Create left border for triangle */
+    border-right: 124px solid transparent; /* Create right border for triangle */
+    border-bottom: 90px solid #ff4081; /* Slightly darker pink for the flap */
+    
+    /* Ensure rotation happens from the flat edge (the top of the triangle) */
+    transform-origin: bottom center;
+    
+    /* Transition smoothness */
+    transition: transform 0.5s ease-in-out;
+    
+    z-index: 1;
+    pointer-events: none; /* Ensure the flap doesn't interfere with dragging */
+    
+    transform: rotateX(180deg); /* Initially points down */
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    bottom: 0px; /* Move it above the card */
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 124px solid transparent; /* Increase the size of the triangle */
+    border-right: 124px solid transparent; /* Increase the size of the triangle */
+    border-bottom: 92px solid #ff4081; /* Matching the flap color */
+    transform: translateX(-50%); /* Center the triangle horizontally */
+    z-index: 3; /* Bring the triangle in front of the card */
+}
+
+/* Right triangle (Detail) - Points to the left */
+.envelope::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0px; /* Move it slightly to the right */
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent; /* Transparent top border */
+    border-bottom: 90px solid transparent; /* Transparent bottom border */
+    border-right: 125px solid #ff80ab; /* Color for right triangle and make it point to the left */
+    transform: translateY(-50%); /* Vertically center it */
+    z-index: 3; /* Ensure it's above the card */
+}
+
+/* Left triangle div - Points to the right */
+.left-triangle {
+    position: absolute;
+    top: 50%;
+    left: 0px; /* Move it to the left side */
+    width: 0;
+    height: 0;
+    border-top: 90px solid transparent;
+    border-bottom: 90px solid transparent;
+    border-left: 125px solid #ff80ab; /* Color for left triangle and make it point to the right */
+    transform: translateY(-50%); /* Vertically center it */
+    z-index: 3; /* Ensure it's above the card */
+}
+
+/* Card */
+.card {
+    position: absolute;
+    width: 220px;
+    height: 140px;
+    border-radius: 5px;
+    background: #fff;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    text-align: center;
+    line-height: 140px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #ff4081; /* Matching the envelope color */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    cursor: grab;
+    z-index: 2; /* Card stays behind the triangle */
+}
+
+/* GIF Styles */
+.gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the GIF */
+    width: 50px; /* Adjust the size of the GIF */
+    height: 50px; /* Adjust the size of the GIF */
+    z-index: 4; /* Ensure it stays on top of the envelope */
+    user-select: none; /* Disable selection of the GIF */
+    pointer-events: none;
+}
+
+
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 64, 129, 0.8);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+.gallery-item img, 
+.gallery-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Hover Effect */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+
+.caption {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff4081;
+    margin-top: 8px;
+}
+
+.scratch-container {
+    position: relative;
+    display: inline-block;
+    width: 280px;
+}
+
+#scratchCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#hiddenImage {
+    width: 100%; /* Make the image fit within the container */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.floating-images {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating {
+    position: absolute;
+    width: 60px; /* Adjust size */
+    height: auto;
+    opacity: 0.8;
+    animation: float 5s infinite ease-in-out alternate, move 7s infinite linear alternate;
+}
+
+/* Floating up and down */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-30px); }
+}
+
+/* Side-to-side movement */
+@keyframes move {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(30px); }
+}
