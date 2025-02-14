@@ -210,14 +210,14 @@ h3 {
 .card {
     position: absolute;
     width: 220px;
-    height: 140px;
+    height: 200px;
     border-radius: 5px;
     background: #fff;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%) translateY(100%);
     text-align: center;
-    line-height: 140px;
+    line-height: 20px;
     font-family: Arial, sans-serif;
     font-size: 18px;
     color: #ff4081; 
@@ -229,6 +229,10 @@ h3 {
     z-index: 2; 
 }
 
+p {
+    color: black;
+    font-size: smaller;
+}
 
 .gif {
     position: absolute;
